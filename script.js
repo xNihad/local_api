@@ -5,6 +5,7 @@ const cors = require("cors")
 const app = express()
 
 
+
 app.use(express.static('public'));
 app.use(bodyParse.json())
 app.use(cors())
@@ -19,10 +20,7 @@ const Modelz = mongoose.model("room", Schemaz)
 app.get("/rooms", async (req,res)=>{
     try {
          req = await Modelz.find()
-    
-         GetDatas()
-
-        //CreateCards(req.data)
+         res.send(req)
     } catch (error) {
         res.status(500).send(error.message);
     } 
@@ -78,3 +76,4 @@ mongoose.connect("mongodb+srv://nihadjkh:3ZrNMyZG4KrPVgET@cluster0.cilcttz.mongo
 app.listen(7070, ()=>{
     console.log("Port 7070 is listened");
 })
+

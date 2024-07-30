@@ -5,6 +5,7 @@ body {
 }
 nav{
     background-color: rgb(248, 249,250);
+    margin-bottom: 20px;
 }
 .wrapper{
     width: 1200px;
@@ -60,9 +61,6 @@ a {
 }
 
 
-
-
-
 footer{
     background-color: #212529;
     display: flex;
@@ -71,3 +69,13 @@ footer{
     height: 120px;
     color: white;
 }
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.image{
+    height: 200px;
+    width: 200px;
+}
+
