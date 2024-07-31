@@ -1,6 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const bodyParse = require("body-parser")
+const dotenv = require("dotenv")
+dotenv.config()
 const cors = require("cors")
 const app = express()
 
@@ -64,7 +66,7 @@ app.delete("/rooms/:id", async (req,res)=>{
     }
 })
 
-mongoose.connect("mongodb+srv://nihadjkh:3ZrNMyZG4KrPVgET@cluster0.cilcttz.mongodb.net/api-db")
+mongoose.connect(process.env.DB_connection_string)
 .then(res=>{
     console.log("Connected to DB");
 })
